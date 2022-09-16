@@ -14,8 +14,9 @@ public class CubeRay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        RaycastHit hit;
         cubeRayValue = new Ray(transform.position, Vector3.forward);
-        Physics.Raycast(cubeRayValue, 10f);
+        Physics.Raycast(cubeRayValue, out hit, 10f);
         Debug.DrawRay(transform.position, Vector3.forward * 10f, Color.green);
     }
 }
